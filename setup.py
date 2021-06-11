@@ -22,6 +22,7 @@ f.close()
 #ignore the warnings generated during numpy.f2py; have a lot of unused variables; don't know why the "uninitialized-maybe" warnings come 
 print('No need to compile the Fortran code again and again, go to setup.py and comment the f2py line to avoid wasting time every compilation')
 #os.system('f2py -c --fcompiler=gnu95 --compiler=mingw32 -m mat  generate_matrices.f90 stveco.f90 anxlk.f90 matrxd.f90 matrxo.f90 cd2km.f90 fz.f90 ccrint_new.f90 bessel.f90 ipar.f90 plgndr.f90 w3j.f90')
+os.system('python3 -m numpy.f2py -c -m mat generate_matrices.f90 stveco.f90 anxlk.f90 matrxd.f90 matrxo.f90 cd2km.f90 fz.f90 ccrint_new.f90 bessel.f90 ipar.f90 plgndr.f90 w3j.f90')
 
 import mat #the Fortran90 wrapped module just generated, mat.generate_matrices is a F90 subroutine that can be called in Python 
 
